@@ -21,13 +21,13 @@ const findAttraction = async () => {
 const changeContents = (attraction) => {
     banner.src = attraction.image
     attractionName.innerHTML = attraction.title
-    description.innerHTML = attraction.description
-    socials.innerHTML = Object.entries(attraction.socials).map(([social, url]) => {
+    description.innerHTML = attraction.description.replace(/\n/gm, "<br>")
+    socials.innerHTML = attraction.socials ? Object.entries(attraction.socials).map(([social, url]) => {
         switch(social) {
             case "twitter": return twitterSrc(url)
             case "instagram": return instagramSrc(url)
         }
-    }).join("")
+    }).join("") : null
 }
 
 let theme = "light"
