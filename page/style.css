@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*:not(i) {
+    font-family: 'Robotto', sans-serif;
+}
+
+body {
+    margin: 0;
+    background: var(--surface);
+    transition: background 1s;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    height: 80vh;
+    width: 30vw;
+    border-radius: 50px;
+    overflow: hidden;
+    background: var(--surfaceVariant);
+    transition: background 1s;
+    position: relative;
+}
+
+
+.banner{
+    width: 30vw;
+    height: 20vh;
+    object-fit: cover;
+}
+
+
+.content{
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(60vh - 32px);
+}
+
+
+.information {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.name {
+    font-size: 28px;
+}
+.socials{
+    margin-left: auto;
+}
+.socials > * {
+    cursor: pointer;
+    color: #000;
+    text-decoration: none
+}
+
+
+.description{
+    flex-grow: 1;
+    overflow-y: auto;
+    min-height: 100%;
+    padding-bottom: calc(96px + (16px * 2));
+    text-align: justify;
+}
+.description::-webkit-scrollbar {
+    width: 4px;
+}
+.description:hover::-webkit-scrollbar-thumb {
+    background: rgb(0, 0, 0, 20%);
+}
+
+
+.nextButton{
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    height: 96px;
+    width: 96px;
+    border: none;
+    border-radius: 28px;
+    background: var(--primary);
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 50%);
+    color: #fff;
+    font-size: 36px;
+    cursor: pointer;
+    transition: background 1s;
+}
